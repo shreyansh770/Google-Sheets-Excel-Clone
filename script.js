@@ -198,14 +198,11 @@ formulaInput.addEventListener("change", (e) => {
     let fInput = e.currentTarget.value;
 
     let selectedCellAddresss = oldCell.getAttribute("data-address");
-
+    console.log(fInput);
 
     dataObj[selectedCellAddresss].formula = fInput;
 
     let formulaArr = fInput.split(" ");
-
-
-
     let eleArr = [];
 
     for (let i = 0; i < formulaArr.length; i++) {
@@ -277,7 +274,7 @@ formulaInput.addEventListener("change", (e) => {
 function removeFromUpstream(dependent, onWhichItsDependent) {
 
     let newDownStream = [];
-
+    console.log(onWhichItsDependent);
     let oldDownStream = dataObj[onWhichItsDependent].downstream;
 
     for (let i = 0; i < oldDownStream.length; i++) {
